@@ -80,7 +80,7 @@ minetest.register_chatcommand("skin", {
 	end
 })
 
---[[
+
 minetest.register_chatcommand("skin-info", {
 	func = function(name, param)
 		if customskins.workingSkin[name] then
@@ -95,7 +95,7 @@ minetest.register_chatcommand("skin-info", {
 		end
 	end
 })
---]]
+
 
 function customskins.getPlayerSkin(name)
 	if customskins.appliedSkin[name] then

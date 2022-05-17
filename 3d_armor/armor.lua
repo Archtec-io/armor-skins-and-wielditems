@@ -981,4 +981,4 @@ armor.craft_transfer_ware = function(itemstack, player, old_craft_grid, craft_in
 end
 
 minetest.register_craft_predict(armor.craft_transfer_ware)
-minetest.register_on_craft(armor.craft_transfer_ware)
+--minetest.register_on_craft(armor.craft_transfer_ware)

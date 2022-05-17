@@ -80,6 +80,7 @@ local wield_entity = {
 	wielder = nil,
 	timer = 0,
 	static_save = false,
+	pointable = false,
 }
 
 function wield_entity:on_activate(staticdata)
