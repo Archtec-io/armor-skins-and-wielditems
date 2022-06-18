@@ -296,7 +296,7 @@ end
 
 -- Armor Player Model
 
-default.player_register_model("3d_armor_character.b3d", {
+player_api.register_model("3d_armor_character.b3d", {
 	animation_speed = 30,
 	textures = {
 		armor.default_skin..".png",
@@ -437,6 +437,20 @@ end, true)
 
 minetest.register_globalstep(function(dtime)
 	timer = timer + dtime
+
+	if armor.config.feather_fall == true then
+		for _,player in pairs(minetest.get_connected_players()) do
+			local name = player:get_player_name()
+			if armor.def[name].feather > 0 then
+				local vel_y = player:get_velocity().y
+				if vel_y < 0 and vel_y < 3 then
+					vel_y = -(vel_y * 0.05)
+					player:add_velocity({x = 0, y = vel_y, z = 0})
+				end
+			end
+		end
+	end
+
 	if timer <= armor.config.init_delay then
 		return
 	end
