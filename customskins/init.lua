@@ -80,7 +80,6 @@ minetest.register_chatcommand("skin", {
 	end
 })
 
-
 minetest.register_chatcommand("skin-info", {
 	func = function(name, param)
 		if customskins.workingSkin[name] then
@@ -95,7 +94,6 @@ minetest.register_chatcommand("skin-info", {
 		end
 	end
 })
-
 
 function customskins.getPlayerSkin(name)
 	if customskins.appliedSkin[name] then
@@ -143,8 +141,8 @@ end
 function customskins.getFormspec(name)
 	return table.concat({
         "formspec_version[4]",
-        "size[16,10]",
-		"label[0.5,0.35;customskins v.0.4.4(wip) by Herkules]",
+        "size[12,8.25]",
+		"label[0.5,0.35;customskins v.0.4.4(wip)]",
 		-- Player preview
 		"box[0.5,0.5;3.5,6;#737373]",
 		--"model[0.5,0.5;3.5,6;preview_mesh;character.b3d;character.png]",
@@ -153,13 +151,13 @@ function customskins.getFormspec(name)
 		"button[0.5,6;1.75,0.5;btn_front;Front]",
 		"button[2.25,6;1.75,0.5;btn_back;Back]",
 		-- Part select
-		"box[4.5,0.5;9,6;#737373]",
+		"box[4.5,0.5;7,6;#737373]",
 		tabHeader,
 		--customskins.get_tabheader(selected_feature_tab[name]),
 		--"tabheader[4.5,1;7,0.5;feature;Skin,Face,Hair,Body,Legs,Shoes,Misc.;Skin;false;true]",
 		"scrollbaroptions[arrows=hide]",
-		"scrollbar[14,1;0.75,5.5;vertical;feature_scrollbar;0.1]",      --"scrollbar[10.75,1;0.75,5.5;vertical;feature_scrollbar;0.1]",
-		"scroll_container[4.5,1;6,5.5;feature_scrollbar;vertical;0.05]",
+		"scrollbar[10.75,1;0.75,5.5;vertical;feature_scrollbar;0.1]",
+		"scroll_container[4.5,1;6,5.5;feature_scrollbar;vertical;0.01]",
 		--customskins.get_features(selected_feature_tab[name]),
 		tabContents[customskins.selectedTab[name]],
 		"scroll_container_end[]",
