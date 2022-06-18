@@ -181,7 +181,7 @@ armor.config = {
 	water_protect = true,
 	fire_protect = minetest.get_modpath("ethereal") ~= nil,
 	fire_protect_torch = minetest.get_modpath("ethereal") ~= nil,
-	feather_fall = true
+	feather_fall = true,
 	punch_damage = true,
 }
 
