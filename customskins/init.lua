@@ -224,6 +224,8 @@ minetest.register_on_player_receive_fields(
 				storage:set_string(name, customskins.appliedSkin[name]:serialize())
 				minetest.close_formspec(name, "customskins:skineditor")
 				return
+			elseif fields.button_exit then
+				minetest.close_formspec(name, "customskins:skineditor")
 			elseif fields.btn_default then
 				customskins.workingSkin[name] = nil
 				customskins.workingSkin[name] = customskins.getDefaultSkin()
