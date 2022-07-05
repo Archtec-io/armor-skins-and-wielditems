@@ -32,7 +32,7 @@ local scale = {x=0.25, y=0.25}
 local rx = -90
 local rz = 90
 
-wield3d.location = {
+wieldview3d.location = {
 	["default:torch"] = {bone, pos, {x=rx, y=180, z=rz}, scale},
 	["default:sapling"] = {bone, pos, {x=rx, y=180, z=rz}, scale},
 	["flowers:dandelion_white"] = {bone, pos, {x=rx, y=180, z=rz}, scale},
