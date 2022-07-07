@@ -18,7 +18,7 @@ function customskins.setPlayerSkin(name, str)
 		armor.textures[name].skin = str
 		armor:update_skin(name)
 	else
-		default.player_set_textures(minetest.get_player_by_name(name), {str})
+		player_api.set_textures(minetest.get_player_by_name(name), {str})
 	end
 end
 
