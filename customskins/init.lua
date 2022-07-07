@@ -140,40 +140,25 @@ end
 
 function customskins.getFormspec(name)
 	return table.concat({
-        "formspec_version[4]",
-        "size[12,8.25]",
-		"label[0.5,0.35;customskins v.0.4.4(wip)]",
+        "formspec_version[4]", --formspec version
+        "size[20,15]", --formspec size
+		"label[0.5,0.5;CustomSkins 0.4.4 - All skins are from https://www.needcoolshoes.com]", --title
 		-- Player preview
-		"box[0.5,0.5;3.5,6;#737373]",
-		--"model[0.5,0.5;3.5,6;preview_mesh;character.b3d;character.png]",
-		--customcustomskins.get_player_preview(name),
+		"box[0.8,0.8;3.5,6;#737373]", --background player_preview
 		customskins.getPlayerPreview(name),
-		"button[0.5,6;1.75,0.5;btn_front;Front]",
-		"button[2.25,6;1.75,0.5;btn_back;Back]",
+		"button[0.8,6.8;1.75,0.5;btn_front;Front]", --preview front button
+		"button[2.55,6.8;1.75,0.5;btn_back;Back]", --preview back button
 		-- Part select
-		"box[4.5,0.5;7,6;#737373]",
+		"box[5,1;7,6;#737373]", --background skin search
 		tabHeader,
-		--customskins.get_tabheader(selected_feature_tab[name]),
-		--"tabheader[4.5,1;7,0.5;feature;Skin,Face,Hair,Body,Legs,Shoes,Misc.;Skin;false;true]",
 		"scrollbaroptions[arrows=hide]",
-		"scrollbar[10.75,1;0.75,5.5;vertical;feature_scrollbar;0.1]",
-		"scroll_container[4.5,1;6,5.5;feature_scrollbar;vertical;0.01]",
-		--customskins.get_features(selected_feature_tab[name]),
+		"scrollbar[12,1;0.75,6;vertical;feature_scrollbar;0.1]", --scrollbar
+		"scroll_container[5,1;6,5.5;feature_scrollbar;vertical;0.01]",
 		tabContents[customskins.selectedTab[name]],
-		"scroll_container_end[]",
-		-- Color sliders
-		--"label[4.5,4.75;color]",
-		--"label[4.5,5.5;lightness]",
-		--"label[4.5,6.25;saturation]",
-		--"scrollbar[6,4.5;5.5,0.5;horizontal;color_h;0.1]",
-		--"scrollbar[6,5.25;5.5,0.5;horizontal;color_s;0.1]",
-		--"scrollbar[6,6;5.5,0.5;horizontal;color_v;0.1]",	
+		"scroll_container_end[]",	
 		-- Buttons
-		"button_exit[0.5,7;1.5,0.75;btn_exit;Exit]",
-		--"button[2.5,7;1.5,0.75;btn_reset;Reset]",
-		--"button[4.5,7;1.5,0.75;btn_random;Random]",
-		--"button[6.5,7;1.5,0.75;btn_default;Default]",
-		"button[8.5,7;3,0.75;btn_apply;Apply]"
+		"button_exit[0.8,13.2;1.5,0.75;btn_exit;Exit]", --button exit
+		"button[8.5,7;3,0.75;btn_apply;Apply]" --button apply
     }, "")
 end
 
