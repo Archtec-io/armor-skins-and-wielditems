@@ -12,7 +12,7 @@ function customskins.getSkinFromStorage(storage, name)
 	return Skin.new();
 end
 
-
+--render skin on player
 function customskins.setPlayerSkin(name, str)
 	if minetest.get_modpath("3d_armor") then
 		armor.textures[name].skin = str

@@ -177,8 +177,6 @@ function customskins.getDefaultSkin()
 		end
 		skin.order[k] = k
 	end
-	--skin.order = {[1]=2,[2]=6,[3]=1,[4]=4,[5]=5,[6]=7,[7]=3} -- TODO: Remove hardcoded order
-	--skin.order = {[1]=3,[2]=6,[3]=7,[4]=1,[5]=8,[6]=5,[7]=2,[8]=4}
 	return skin
 end
 
@@ -214,17 +212,6 @@ minetest.register_on_player_receive_fields(
 			elseif fields.btn_default then
 				customskins.workingSkin[name] = nil
 				customskins.workingSkin[name] = customskins.getDefaultSkin()
-			elseif fields.btn_reset then
-				customskins.workingSkin[name] = nil
-				if customskins.appliedSkin[name] then
-					customskins.workingSkin[name] = copy(customskins.appliedSkin[name], nil)
-				else
-					if storage:contains(name) then
-						customskins.workingSkin[name] = Skin.deserialize(storage:get_string(name))
-					else
-						customskins.workingSkin[name] = customskins.getDefaultSkin()
-					end
-				end
 			else -- All parts
 				for k, v in pairs(ordered_keys) do
 					local part = nil
