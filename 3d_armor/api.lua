@@ -228,7 +228,7 @@ armor.register_armor = function(self, name, def)
 
 	-- Add an invisible version of the the armor
 	if name:find("3d_armor:") or name:find("shields:") then
-    		invisible_def = table.copy(def)
+    		local invisible_def = table.copy(def)
 		invisible_def.inventory_image = invisible_def.inventory_image .. "^[mask:invisible.png"
     		invisible_def.groups["not_in_creative_inventory"] = 1
     		minetest.register_tool(":invisible_"..name, invisible_def)	
